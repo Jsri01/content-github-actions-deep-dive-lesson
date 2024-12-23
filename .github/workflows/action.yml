@@ -1,0 +1,5 @@
+name: Deploy by lamba function
+on: 
+ push:
+   branches:
+    - main
