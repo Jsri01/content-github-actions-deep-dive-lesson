@@ -8,7 +8,7 @@ jobs:
    runs-on: ubuntu-latest
    steps:
       - name: check out code
-      - uses: actions/checout@v2
+      - uses: actions/checkout@v2
       - name: set up python 
       - uses: actions/setup-python@v2
         with:
@@ -17,15 +17,15 @@ jobs:
         run: |
              cd function
              python -m pip install --upgrade pip
-             if[ -f requirements.txt.]; then pip install -r requirements.txt -t .; fi
+             if[ -f requirements.txt ]; then pip install -r requirements.txt -t .; fi
       - name: create zip bundle
         run: |
              cd function
-             zip -r ../${{github.sha}}.zip .
-      - name: Archieve artifacts
-      - uses: actions/upload-artifacts@v2
+             zip -r ../${{ github.sha }}.zip .
+      - name: Archieve artifact
+      - uses: actions/upload-artifact@v2
         with:
             name: zipped-bundle
-            path: ${{github.sha}}.zip
+            path: ${{ github.sha }}.zip
        
    
