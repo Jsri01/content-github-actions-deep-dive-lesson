@@ -21,5 +21,11 @@ jobs:
       - name: create zip bundle
         run: |
              cd function
-             zip -r ../${{githun.sha}}.zip .
+             zip -r ../${{github.sha}}.zip .
+      - name: Archieve artifacts
+      - uses: actions/upload-artifacts@v2
+        with:
+            name: zipped-bundle
+            path: ${{github.shga}}.zip
+       
    
