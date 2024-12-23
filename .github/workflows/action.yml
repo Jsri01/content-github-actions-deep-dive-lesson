@@ -26,6 +26,6 @@ jobs:
       - uses: actions/upload-artifacts@v2
         with:
             name: zipped-bundle
-            path: ${{github.shga}}.zip
+            path: ${{github.sha}}.zip
        
    
