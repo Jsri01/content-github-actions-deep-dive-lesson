@@ -30,7 +30,7 @@ jobs:
           zip -r ../${{ github.sha }}.zip .
 
       - name: Archive artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: zipped-bundle
           path: ${{ github.sha }}.zip
@@ -40,7 +40,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: zipped-bundle
 
