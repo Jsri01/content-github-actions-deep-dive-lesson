@@ -39,7 +39,7 @@ upload:
        with:
         name: zipped-bundle
      - name: configure aws CLI
-       uses: aws-actions/configure-aws-credentrial@v1
+       uses: aws-actions/configure-aws-credentials@v1
        with: 
         aws-access-key-id : ${{ secret.AWS_ACCESS_KEY }}
         aws-access-secret-key : ${{ secret.AWS_ACCESS_SECRET_KEY }}
