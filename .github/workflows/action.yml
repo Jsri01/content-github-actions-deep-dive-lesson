@@ -41,8 +41,8 @@ upload:
      - name: configure aws CLI
        uses: aws-actions/configure-aws-credentials@v1
        with: 
-        aws-access-key-id : ${{ secret.AWS_ACCESS_KEY }}
-        aws-access-secret-key : ${{ secret.AWS_ACCESS_SECRET_KEY }}
+        aws-access-key-id : ${{ secrets.AWS_ACCESS_KEY }}
+        aws-access-secret-key : ${{ secrets.AWS_ACCESS_SECRET_KEY }}
         aws-region: us-east-1
      - name: upload artifacts to s3
        run: aws s3 cp ${{ github.sha }}.zip s3://jayasriawsbucket/${{ github.sha }}
